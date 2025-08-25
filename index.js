@@ -13,7 +13,10 @@ const clavier = document.getElementById("clavier");
 const message = document.getElementById("message");
 const boutonRejouer = document.getElementById("bouton-rejouer");
 const winstreak = document.querySelector('#winstreak');
-const boutonTheme = document.querySelector('#theme-toggle')
+const boutonTheme = document.querySelector('#theme-toggle');
+const btnRegles = document.querySelector('#btn-regles');
+const regles = document.querySelector('#modele-regles');
+const btnFermer = document.querySelector('#btn-fermer');
 
 // Parties du pendu 
 const partiesPendu = [
@@ -119,6 +122,13 @@ function nouvellePartie() {
 
 // --- Événements
 boutonRejouer.addEventListener("click", nouvellePartie);
+
+btnRegles.addEventListener('click', () => {
+  regles.style.display = 'flex';
+});
+btnFermer.addEventListener('click', () => {
+  regles.style.display = 'none';
+});
 
 // --- Lancer le jeu au chargement 
 nouvellePartie();

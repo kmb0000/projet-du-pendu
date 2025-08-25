@@ -1,21 +1,7 @@
-/* cache/affiche les parties du pendu */
-.cache {
-  display: none;
-}
-
-/* Style du pendu */
-.dessin-pendu line,
-.dessin-pendu circle {
-  stroke: #222;          /* couleur des traits */
-  stroke-width: 4px;     /* épaisseur */
-  fill: none;            /* pas de remplissage (évite cercle plein) */
-  stroke-linecap: round; /* bouts arrondis */
-  transition: stroke 0.3s ease;
-}
-
-/* Style global */
+/* ----------------- Style global ----------------- */
+@import url('https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap');
 body {
-  font-family: system-ui, sans-serif;
+  font-family: 'Rubik Distressed', system-ui, sans-serif;
   margin: 0;
   display: grid;
   place-items: center;
@@ -24,72 +10,15 @@ body {
   color: #222;
   transition: background 0.3s ease, color 0.3s ease;
 }
+h1, h2, h3, p, button, .touche, .bouton-rejouer, .winstreak {
+  font-family: 'Rubik Distressed', system-ui, sans-serif;
+}
 .container-jeu {
   width: min(680px, 92vw);
   text-align: center;
 }
-.mot-a-deviner {
-  font-size: 2rem;
-  letter-spacing: .25rem;
-  margin: 1rem 0 1.5rem;
-}
-.clavier {
-  display: grid;
-  grid-template-columns: repeat(13, 1fr);
-  gap: .5rem;
-  margin: 1rem 0;
-}
-.touche {
-  padding: .5rem .25rem;
-  border: 1px solid #ddd;
-  border-radius: .5rem;
-  background: white;
-  cursor: pointer;
-  font-size: 2rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease, 0.3s ease, color 0.3s ease, border 0.3s ease
-}
-/* effet hover */
-.touche:hover:not(:disabled) {
-  background: #f0f0f0;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
 
-/* effet quand on clique */
-.touche:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: none;
-  background: #e0e0e0;
-}
-.touche:disabled {
-  opacity: .45;
-  cursor: not-allowed;
-  background: #ddd;
-}
-.bouton-rejouer {
-  margin-top: 1.5rem;
-  padding: .6rem 1rem;
-  border-radius: .6rem;
-  border: 0;
-  background: #222;
-  color: white;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background 0.3s ease, color 0.3s ease transform 0.2s ease, box-shadow 0.2s ease;
-}
-/* hover */
-.bouton-rejouer:hover {
-  background: #444;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
-}
-
-/* click */
-.bouton-rejouer:active {
-  transform: translateY(0);
-  box-shadow: none;
-  background: #555;
-}
+/* ----------------- Bouton thème sombre ----------------- */
 .theme-toggle {
   position: absolute;
   top: 5%;
@@ -106,12 +35,149 @@ body {
 .theme-toggle:active {
   transform: rotate(360deg);
 }
+
+/* ----------------- Bouton Règles + modele ----------------- */
+.btn-regles {
+  position: absolute;
+  top: 7%;
+  left: 10%;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1100;
+  font-size: 1.5rem;
+}
+.btn-regles:hover {
+  background: #444;
+}
+.modele {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.regles-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  line-height: 1.5;
+}
+.regles-content li {
+  text-align: start;
+}
+.btn-fermer {
+  margin-top: 1.5rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.btn-fermer:hover {
+  background: #444;
+}
+
+/* ----------------- Win streak ----------------- */
 .winstreak {
   font-size: 2rem;
 }
 
-/*-------------------- THÈME SOMBRE ----------------*/
+/* ----------------- Mot à deviner ----------------- */
+.mot-a-deviner {
+  font-size: 2rem;
+  letter-spacing: .25rem;
+  margin: 1rem 0 1.5rem;
+}
 
+/* ----------------- Pendu ----------------- */
+.cache {
+  display: none;
+}
+.dessin-pendu line,
+.dessin-pendu circle {
+  stroke: #222;
+  stroke-width: 4px;
+  fill: none;
+  stroke-linecap: round;
+  transition: stroke 0.3s ease;
+}
+
+/* ----------------- Clavier et touches ----------------- */
+.clavier {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(40px, 1fr));
+  gap: .5rem;
+  margin: 1rem 0;
+}
+.touche {
+  padding: .5rem .25rem;
+  border: 1px solid #ddd;
+  border-radius: .5rem;
+  background: white;
+  cursor: pointer;
+  font-size: 2rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, color 0.3s ease, border 0.3s ease;
+}
+.touche:hover:not(:disabled) {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.touche:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+  background: #e0e0e0;
+}
+.touche:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  background: #ddd;
+}
+
+/* ----------------- Zone message ----------------- */
+.message {
+  font-size: 1.2rem;
+}
+
+/* ----------------- Bouton Rejouer ----------------- */
+.bouton-rejouer {
+  margin-top: 1.5rem;
+  padding: .6rem 1rem;
+  border-radius: .6rem;
+  border: 0;
+  background: #222;
+  color: white;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+.bouton-rejouer:hover {
+  background: #444;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+.bouton-rejouer:active {
+  transform: translateY(0);
+  box-shadow: none;
+  background: #555;
+}
+
+/* ----------------- Thème sombre ----------------- */
 body.dark {
   background: #222;
   color: #cf1818;
@@ -131,5 +197,42 @@ body.dark .theme-toggle {
 }
 body.dark .dessin-pendu line,
 body.dark .dessin-pendu circle {
-  stroke: #f7f7f7; /* traits blancs au lieu de noirs */
+  stroke: #f7f7f7;
+}
+body.dark .regles-content {
+  background: #d80f0f;
+  color: #f7f7f7;
+}
+body.dark .btn-fermer {
+  background: #333;
+  color: #f7f7f7;
+}
+body.dark .btn-fermer:hover {
+  background: #555;
+}
+body.dark .btn-regles {
+  background: white;
+  color: #cf1818;
+}
+body.dark .btn-regles:hover {
+  background: #e47011;
+}
+
+@media (max-width: 550px) {
+  .theme-toggle {
+    top: 2%;
+    right: 2%;
+    font-size: 2rem;
+  }
+  .btn-regles {
+    top: 4%;
+    left: 2%;
+    font-size: 1.2rem;
+  }
+  .mot-a-deviner {
+    letter-spacing: .15rem;
+  }
+  .winstreak {
+    font-size: 1.5rem;
+  }
 }

@@ -8,29 +8,45 @@
 </head>
 <body>
   <main class="container-jeu">
-    <h1>🎯 Jeu du Pendu</h1>
-
     <!-- Bouton thème sombre -->
     <button id="theme-toggle" class="theme-toggle">🌙</button>
 
-<!-- Win streak -->
+    <!-- Bouton Règles -->
+    <button id="btn-regles" class="btn-regles">Règles</button>
+
+                <!-- liste des regles -->
+    <div id="modele-regles" class="modele">
+      <div class="regles-content">
+        <h2>Règles du jeu</h2>
+        <ul>
+          <li>Devinez le mot en cliquant sur les lettres.</li>
+          <li>Vous avez 6 erreurs maximum avant de perdre.</li>
+          <li>Chaque lettre incorrecte fait apparaître une partie du pendu.</li>
+        </ul>
+        <button id="btn-fermer" class="btn-fermer">Quitter</button>
+      </div>
+    </div>
+    
+    <h1>🎯 Jeu du Pendu</h1>
+
+                <!-- Win streak -->
     <div id="winstreak" class="winstreak"></div>
 
-    <!-- Mot à deviner -->
+                <!-- Mot à deviner -->
     <div id="mot-a-deviner" class="mot-a-deviner">
-      <!-- underscores ou lettres affichés ici -->
+                <!-- underscores ou lettres affichés ici -->
     </div>
 
-    <!-- Dessin du pendu -->
+              <!-- Dessin du pendu -->
     <div id="pendu" class="pendu">
       <svg height="250" width="200" class="dessin-pendu">
-        <!-- Structure -->
+              <!-- Structure -->
         <line x1="60" y1="20" x2="140" y2="20" />
         <line x1="140" y1="20" x2="140" y2="50" />
         <line x1="60" y1="20" x2="60" y2="230" />
         <line x1="20" y1="230" x2="100" y2="230" />
 
-        <!-- Parties du corps -->
+              <!-- Parties du corps -->
         <circle id="tete" cx="140" cy="70" r="20" class="cache" />
         <line id="corps" x1="140" y1="90" x2="140" y2="150" class="cache" />
         <line id="bras-gauche" x1="140" y1="100" x2="110" y2="130" class="cache" />
@@ -40,15 +56,15 @@
       </svg>
     </div>
 
-    <!-- Clavier virtuel -->
+              <!-- Clavier virtuel -->
     <div id="clavier" class="clavier">
-      <!-- Lettres -->
+              <!-- Lettres -->
     </div>
 
-    <!-- Zone de message -->
+              <!-- Zone de message -->
     <div id="message" class="message"></div>
 
-    <!-- Bouton rejouer -->
+              <!-- Bouton rejouer -->
     <button id="bouton-rejouer" class="bouton-rejouer">🔄 Rejouer</button>
   </main>
 
