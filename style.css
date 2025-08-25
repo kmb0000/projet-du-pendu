@@ -7,6 +7,10 @@ body {
   place-items: center;
   min-height: 100vh;
   background: #f7f7f8;
+  background-image: url(images/theme-clair.jpg);
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  background-size: cover;
   color: #222;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -180,6 +184,10 @@ h1, h2, h3, p, button, .touche, .bouton-rejouer, .winstreak {
 /* ----------------- Thème sombre ----------------- */
 body.dark {
   background: #222;
+  background-image: url(images/theme-sombre.jpg);
+  background-repeat: no-repeat;
+  background-position: center center fixed;
+  background-size: cover;
   color: #cf1818;
 }
 body.dark .touche {
