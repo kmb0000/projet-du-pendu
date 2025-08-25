@@ -1,5 +1,6 @@
 // --- Variables globales ---
-const listeMots = ["ORDINATEUR", "PROGRAMMATION", "JAVASCRIPT", "NAVIGATEUR", "INTERNET", "PENDU", "ALGORITHME"];
+const listeMots = ["ORDINATEUR", "PROGRAMMATION", "JAVASCRIPT", "NAVIGATEUR", "INTERNET", "PENDU", "ALGORITHME", "MAISON", "CHAT", "SOLEIL", "MONDE", "TEMPS", "JOUR", "NOMBRE","VILLE", "DROIT", "LUMIERE", "HISTOIRE", "FORET", "OISEAU", "TRAVAIL", "NUAGE", "FAMILLE",
+"MER", "LIVRE"];
 let motSecret = "";
 let lettresTrouvees = [];
 let erreurs = 0;
