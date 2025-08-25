@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeu du Pendu</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container-jeu">
+    <h1>🎯 Jeu du Pendu</h1>
+
+    <!-- Bouton thème sombre -->
+    <button id="theme-toggle" class="theme-toggle">🌙</button>
+
+<!-- Win streak -->
+    <div id="winstreak" class="winstreak"></div>
+
+    <!-- Mot à deviner -->
+    <div id="mot-a-deviner" class="mot-a-deviner">
+      <!-- underscores ou lettres affichés ici -->
+    </div>
+
+    <!-- Dessin du pendu -->
+    <div id="pendu" class="pendu">
+      <svg height="250" width="200" class="dessin-pendu">
+        <!-- Structure -->
+        <line x1="60" y1="20" x2="140" y2="20" />
+        <line x1="140" y1="20" x2="140" y2="50" />
+        <line x1="60" y1="20" x2="60" y2="230" />
+        <line x1="20" y1="230" x2="100" y2="230" />
+
+        <!-- Parties du corps -->
+        <circle id="tete" cx="140" cy="70" r="20" class="cache" />
+        <line id="corps" x1="140" y1="90" x2="140" y2="150" class="cache" />
+        <line id="bras-gauche" x1="140" y1="100" x2="110" y2="130" class="cache" />
+        <line id="bras-droit" x1="140" y1="100" x2="170" y2="130" class="cache" />
+        <line id="jambe-gauche" x1="140" y1="150" x2="110" y2="180" class="cache" />
+        <line id="jambe-droit" x1="140" y1="150" x2="170" y2="180" class="cache" />
+      </svg>
+    </div>
+
+    <!-- Clavier virtuel -->
+    <div id="clavier" class="clavier">
+      <!-- Lettres -->
+    </div>
+
+    <!-- Zone de message -->
+    <div id="message" class="message"></div>
+
+    <!-- Bouton rejouer -->
+    <button id="bouton-rejouer" class="bouton-rejouer">🔄 Rejouer</button>
+  </main>
+
+  <script src="index.js"></script>
+</body>
+</html>
