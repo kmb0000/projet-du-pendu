@@ -9,8 +9,9 @@ body {
   background: #f7f7f8;
   background-image: url(images/theme-clair.jpg);
   background-repeat: no-repeat;
-  background-position: center center fixed;
+  background-position: center center;
   background-size: cover;
+  background-attachment: fixed;
   color: #222;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -186,7 +187,8 @@ body.dark {
   background: #222;
   background-image: url(images/theme-sombre.jpg);
   background-repeat: no-repeat;
-  background-position: center center fixed;
+  background-position: center center;
+  background-attachment: fixed;
   background-size: cover;
   color: #cf1818;
 }
